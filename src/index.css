@@ -1,0 +1,430 @@
+/* Estilo global */
+body {
+  background-color: #121212;
+  font-family: 'Open Sans', sans-serif;
+  color: #f4f4f4;
+}
+
+/* index.css */
+
+header {
+  background-color: #333; /* Cor de fundo da navbar */
+  padding: 10px 20px; /* Espaçamento interno */
+}
+
+.navbar-logo {
+  width: 50px; /* Define a largura da imagem */
+  height: auto; /* Mantém a proporção da imagem */
+  margin-right: 10px;
+}
+
+
+
+
+/* Estilos para o navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px 20px;
+  position: relative; /* Fixa a navbar na parte superior */
+  z-index: 4;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+/* Ícone de hamburger */
+.navbar-toggle {
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 180px; /* Espaço entre o texto e o ícone */
+  display: none;
+}
+
+/* Estilos para os links do menu */
+.navbar-links {
+  display: flex;
+  gap: 15px;
+}
+
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Estilos para mobile */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 200px;
+    padding: 10px;
+  }
+
+  .navbar-toggle {
+    display: block; /* Mostra o ícone de hamburger no mobile */
+  }
+
+  .navbar-links.open {
+    display: flex; /* Exibe o menu quando aberto */
+  }
+}
+
+
+
+
+  
+
+
+
+
+
+.home-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.movies-list {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens quebrem para a linha seguinte se necessário */
+  justify-content: center; /* Centraliza os itens na linha */
+}
+
+.movie {
+  margin: 10px;
+  border: 1px solid #ddd; /* Borda ao redor de cada filme */
+  border-radius: 5px; /* Cantos arredondados */
+  overflow: hidden; /* Para esconder a parte da imagem que sai da borda */
+  width: 200px; /* Largura fixa para cada filme */
+}
+
+.movie img {
+  width: 100%; /* A imagem ocupa toda a largura do contêiner */
+  height: auto; /* Mantém a proporção da imagem */
+}
+
+h3 {
+  margin: 10px 0 0; /* Margem acima e abaixo do título */
+}
+
+.home-container h1 {
+  margin-top: 40px; /* Espaço acima do título */
+  font-size: 2.5em; /* Tamanho da fonte do título */
+  color: #fcfafa; /* Cor do texto do título */
+}
+
+.home-container p{
+  margin-bottom: 20px; /* Espaço abaixo do título */
+}
+
+
+
+
+/* Hero Section */
+.hero {
+  
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.hero .btn {
+  background-color: #FF3333;
+  padding: 10px 20px;
+  color: #fff;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+  background-color: #CC2929;
+}
+
+/* Seção de Filmes */
+.movies-section {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.movies-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.movie-card {
+  background-color: #1c1c1c;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.movie-card h3 {
+  color: #fff;
+  padding: 15px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+
+
+
+/* Sobre */
+.about-container {
+  width: 100%;
+  height: 100vh;
+  background-image: url('/public/img/cinema.avif'); /* Caminho para o seu GIF */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column; /* Adiciona uma coluna para o texto e o botão */
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1; /* Garante que o conteúdo fique atrás dos outros elementos */
+}
+
+.scrolling-text {
+  color: white;
+  width: 80%;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: center;
+  animation: scrollText 60s linear infinite; /* Animação padrão */
+  position: relative;
+  z-index: 2; /* Z-index do texto para que fique sobre a caixa preta */
+}
+
+/* Animação para o texto rolar */
+@keyframes scrollText {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.about-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0; /* Z-index menor para que fique atrás do texto */
+}
+
+.pause-button {
+  position: absolute; /* Fixa o botão em relação ao container */
+  bottom: 20px; /* Espaço do fundo */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translateX(-50%); /* Ajusta a posição do botão */
+  background-color: rgb(248, 6, 6); 
+  color: rgb(255, 255, 255); /* Cor do texto do botão */
+  border: 2px solid rgb(245, 242, 242); 
+  padding: 10px 20px; /* Espaçamento interno do botão */
+  cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+  font-size: 16px; /* Tamanho da fonte do botão */
+  border-radius: 5px; /* Bordas arredondadas */
+  z-index: 3; /* Z-index maior para que o botão fique clicável */
+}
+
+.pause-button:hover {
+  background-color: rgb(0, 0, 0); /* Efeito ao passar o mouse */
+}
+
+/*Contato*/
+.contact-form-container {
+  width: 100%; /* Largura total */
+  max-width: 800px; /* Largura máxima do formulário em telas grandes */
+  margin: 50px auto; /* Margem superior e inferior para espaçamento, e centraliza horizontalmente */
+  padding: 30px; /* Espaçamento interno */
+  background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro com opacidade */
+  border: 2px solid rgb(252, 251, 247); /* Borda dourada */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Sombra suave */
+  text-align: center; /* Centraliza o texto */
+  display: flex; /* Flexbox para centralização de itens */
+  flex-direction: column; /* Coluna para empilhar elementos */
+  align-items: center; /* Centraliza horizontalmente os itens filhos */
+}
+
+.contact-form-container h1 {
+  color: rgb(223, 211, 211); /* Cor do título */
+  margin-bottom: 10px; /* Espaçamento inferior */
+  font-family: 'Arial', sans-serif; /* Fonte elegante */
+}
+
+.contact-form-container p {
+  color: white; /* Cor do texto */
+  margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+/* Estilos para inputs e textarea */
+.contact-form-container input,
+.contact-form-container textarea {
+  width: 100%; /* Largura total */
+  padding: 15px; /* Espaçamento interno */
+  margin: 10px 0; /* Espaçamento vertical */
+  border: 2px solid rgb(213, 215, 235); /* Borda dourada */
+  border-radius: 5px; /* Bordas arredondadas */
+  background-color: rgba(255, 255, 255, 0.1); /* Fundo branco transparente */
+  color: white; /* Cor do texto */
+  font-size: 16px; /* Tamanho da fonte */
+  transition: border-color 0.3s; /* Transição suave na cor da borda */
+  box-sizing: border-box; /* Inclui padding e borda na largura total */
+  resize: none; /* Impede o redimensionamento do textarea */
+}
+
+.contact-form-container input:focus,
+.contact-form-container textarea:focus {
+  border-color: rgb(255, 255, 252); /* Cor da borda ao focar */
+  outline: none; /* Remove o contorno padrão */
+}
+
+.contact-form-container button {
+  background-color: rgb(252, 251, 247); /* Cor do botão */
+  color: rgb(0, 0, 0); /* Cor do texto do botão */
+  border: none; /* Remove a borda padrão */
+  border-radius: 5px; /* Bordas arredondadas */
+  padding: 15px 30px; /* Espaçamento interno do botão */
+  cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+  font-size: 18px; /* Tamanho da fonte do botão */
+  transition: background-color 0.3s; /* Transição suave na cor do fundo */
+}
+
+.contact-form-container button:hover {
+  background-color: rgba(5, 71, 71, 0.486); /* Cor ao passar o mouse */
+}
+
+/* Estilos Responsivos */
+@media (max-width: 600px) {
+  .contact-form-container {
+    margin: 20px auto; /* Adiciona espaço em cima e embaixo, e centraliza horizontalmente */
+    padding: 15px; /* Ajusta o padding */
+    width: 95%; /* Ajusta a largura para caber na tela */
+    max-width: 350px; /* Largura máxima reduzida para dispositivos móveis */
+  }
+
+  .contact-form-container h1 {
+    font-size: 1.2rem; /* Tamanho da fonte menor em telas pequenas */
+  }
+
+  .contact-form-container p {
+    font-size: 0.9rem; /* Tamanho da fonte menor em telas pequenas */
+  }
+
+  .contact-form-container input,
+  .contact-form-container textarea {
+    font-size: 14px; /* Tamanho da fonte menor em telas pequenas */
+    padding: 10px; /* Reduz o padding em telas pequenas */
+  }
+
+  .contact-form-container button {
+    font-size: 16px; /* Tamanho da fonte menor em telas pequenas */
+  }
+}
+
+
+
+
+
+
+
+/* Estilos do Container de Efeito de TV */
+.tv-effect {
+  position: relative; /* Para posicionar as linhas dentro do container */
+  overflow: hidden; /* Oculta o excesso de linhas */
+  height: 60px; /* Altura do efeito */
+  margin-bottom: 20px; /* Espaçamento abaixo do efeito */
+}
+
+.tv-effect .noise {
+  position: absolute;
+  width: 100%; /* Largura total */
+  height: 100%; /* Altura total */
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.1) 10%,
+    transparent 10%,
+    transparent 20%
+  );
+  animation: noise-animation 0.5s infinite; /* Animação do ruído */
+}
+
+/* Animação do Ruído */
+@keyframes noise-animation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* Move para cima */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Efeitos no Texto */
+.tv-effect h1 {
+  position: relative; /* Para o texto */
+  color: white; /* Cor do texto */
+  z-index: 1; /* Garante que o texto fique acima do efeito */
+  text-align: center; /* Centraliza o texto */
+  font-family: 'Arial', sans-serif; /* Fonte do texto */
+  margin: 0; /* Remove margem */
+}
